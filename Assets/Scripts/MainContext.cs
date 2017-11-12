@@ -10,6 +10,10 @@ public class MainContext : SignalContext
     }
     protected override void mapBindings()
     {
-        commandBinder.Bind<AppStartSignal>().InSequence().To<AppStartCommand>().To<TileMapCreateCommand>().Once();
+        commandBinder.Bind<AppStartSignal>().InSequence().To<AppStartCommand>()
+            .To<TileMapCreateCommand>()
+            .To<CreateRandomShapeCommand>()
+            .To<InstantiateRandomedShapeInToSpawnPointCommand>()
+            .Once();
     }
 }

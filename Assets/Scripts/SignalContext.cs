@@ -27,5 +27,6 @@ public class SignalContext : MVCSContext {
     protected override void mapBindings()
     {
         injectionBinder.Bind<TileMapComponent>();
+        injectionBinder.Bind<CreateRandomShapeCommand>();
     }
 }
